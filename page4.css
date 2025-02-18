@@ -1,0 +1,129 @@
+/* 全局样式 */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400vh;
+    background: linear-gradient(to bottom right, #c2a2dd, #f5cc59, #ffccf7);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+/* 文字样式 */
+.text {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Rubik Iso', cursive, sans-serif;
+    /* 扭曲效果 */
+    line-height: 1.5;
+    width: 45%;
+    position: absolute;
+    justify-content: flex-start;
+    /* 从顶部开始 */
+    flex-direction: column;
+    /* 让内容从上往下排列 */
+    animation: waveAnimation 1s ease-in-out infinite;
+
+    /* 添加放大效果的过渡 */
+    transition: transform 0.5s ease;
+}
+
+.text:hover {
+    transform: scale(1.15);
+}
+
+.animation {
+    @keyframes waveAnimation {
+        0% {
+            transform: translateY(3000) rotate(0deg);
+        }
+
+        25% {
+            transform: translateY(-50000px) rotate(-3000deg);
+        }
+
+        /* 向上移动 30px + 轻微旋转 */
+        50% {
+            transform: translateY(0) rotate(0deg);
+        }
+
+        75% {
+            transform: translateY(5000000px) rotate(3000deg);
+        }
+
+        /* 向下移动 30px + 轻微旋转 */
+        100% {
+            transform: translateY(0) rotate(0deg);
+        }
+    }
+
+    /* 让文字使用动画 */
+    .text {
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+        filter: url(#distortion);
+        line-height: 1.5;
+        width: 90%;
+        text-align: center;
+        color: #793df4;
+    }
+
+    /* 让不同行文字起伏错开，增强波浪感 */
+    .text:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .text:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .text:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    .text:nth-child(4) {
+        animation-delay: 0.6s;
+    }
+}
+
+
+/* 左侧文字 */
+.text.left {
+    color: #ae88fb;
+    left: 5%;
+    top: 0%;
+    text-align: left;
+    font-size: 600%;
+    text-shadow: 2px 2px 0px rgba(205, 16, 16, 0.802);
+}
+
+/* 右侧文字 */
+.text.right {
+    color: rgb(255, 234, 100);
+    right: 5%;
+    top: 13%;
+    text-align: right;
+    font-size: 400%;
+    text-shadow: 2px 2px 0px rgba(238, 186, 30, 0.802);
+}
+
+/* 菜单按钮 */
+.menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.menu div {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 6px 0;
+    border-radius: 2px;
+}

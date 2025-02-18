@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotional Odor Archive</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- 菜单按钮 -->
+    <div class="menu" id="menuBtn">☰</div>
+
+    <!-- 隐藏的菜单项 -->
+    <div class="menu-items" id="menuItems">
+        <div class="item" id="menuItem1" data-url="page1.html">1</div>
+        <div class="item" id="menuItem2" deta-url="page2.html">2</div>
+        <div class="item" id="menuItem3" data-url="page3.html">3</div>
+        <div class="item" id="menuItem4" data-url="page4.html">4</div>
+    </div>
+    <!-- 搜索框 -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Type anything ex(memory):">
+        <button id="searchBtn"></button> <!-- 这里添加按钮文本 -->
+    </div>
+
+    <!-- 引入 JavaScript 文件 -->
+    <script src="index.js"></script>
+
+    <!-- 文字内容 -->
+    <div class="title">Emotional</div>
+    <div class="title">odor</div>
+    <div class="title">archive</div>
+
+    <!-- SVG 扭曲效果 -->
+    <svg>
+        <filter id="distortion">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="3" result="warp"></feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="warp" scale="10" />
+        </filter>
+    </svg>
+</body>
+
+</html>
